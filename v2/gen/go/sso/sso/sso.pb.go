@@ -267,7 +267,7 @@ func (x *IsAdminRequest) GetUserId() string {
 
 type IsAdminResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsAdmin       string                 `protobuf:"bytes,1,opt,name=is_admin,json=isAdmin,proto3" json:"is_admin,omitempty"`
+	IsAdmin       bool                   `protobuf:"varint,1,opt,name=is_admin,json=isAdmin,proto3" json:"is_admin,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -302,11 +302,11 @@ func (*IsAdminResponse) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *IsAdminResponse) GetIsAdmin() string {
+func (x *IsAdminResponse) GetIsAdmin() bool {
 	if x != nil {
 		return x.IsAdmin
 	}
-	return ""
+	return false
 }
 
 var File_sso_sso_proto protoreflect.FileDescriptor
@@ -328,7 +328,7 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x0eIsAdminRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\",\n" +
 	"\x0fIsAdminResponse\x12\x19\n" +
-	"\bis_admin\x18\x01 \x01(\tR\aisAdmin2\xb7\x01\n" +
+	"\bis_admin\x18\x01 \x01(\bR\aisAdmin2\xb7\x01\n" +
 	"\x04Auth\x124\n" +
 	"\x05Login\x12\x14.sso.v2.LoginRequest\x1a\x15.sso.v2.LoginResponse\x12=\n" +
 	"\bRegister\x12\x17.sso.v2.RegisterRequest\x1a\x18.sso.v2.RegisterResponse\x12:\n" +
