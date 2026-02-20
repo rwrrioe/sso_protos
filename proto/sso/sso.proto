@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sso.v1;
 
-option go_package = "github.com/rwrrioe/protos/gen/go/sso/v1;ssov1";
+option go_package = "github.com/rwrrioe/protos/gen/go/sso/v2;ssov2";
 
 service Auth {
   rpc Login (LoginRequest) returns (LoginResponse);
@@ -26,13 +26,13 @@ message RegisterRequest {
   }
   
   message RegisterResponse {
-    int64 user_id = 1;
+    string user_id = 1;
   }
 
 message IsAdminRequest {
-  int64 user_id = 1;
+  string user_id = 1;
 }
 
 message IsAdminResponse {
-  bool is_admin = 1;
+  string is_admin = 1;
 }
