@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package sso.v1;
+package sso.v2;
 
-option go_package = "github.com/rwrrioe/protos/gen/go/sso/v2;ssov2";
+option go_package = "github.com/rwrrioe/protos/v2/gen/go/sso;ssov2";
 
 service Auth {
   rpc Login (LoginRequest) returns (LoginResponse);

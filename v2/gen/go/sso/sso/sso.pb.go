@@ -4,7 +4,7 @@
 // 	protoc        v6.33.0
 // source: sso/sso.proto
 
-package v2
+package ssov2
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -313,7 +313,7 @@ var File_sso_sso_proto protoreflect.FileDescriptor
 
 const file_sso_sso_proto_rawDesc = "" +
 	"\n" +
-	"\rsso/sso.proto\x12\x06sso.v1\"W\n" +
+	"\rsso/sso.proto\x12\x06sso.v2\"W\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x15\n" +
@@ -330,9 +330,9 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x0fIsAdminResponse\x12\x19\n" +
 	"\bis_admin\x18\x01 \x01(\tR\aisAdmin2\xb7\x01\n" +
 	"\x04Auth\x124\n" +
-	"\x05Login\x12\x14.sso.v1.LoginRequest\x1a\x15.sso.v1.LoginResponse\x12=\n" +
-	"\bRegister\x12\x17.sso.v1.RegisterRequest\x1a\x18.sso.v1.RegisterResponse\x12:\n" +
-	"\aIsAdmin\x12\x16.sso.v1.IsAdminRequest\x1a\x17.sso.v1.IsAdminResponseB/Z-github.com/rwrrioe/protos/gen/go/sso/v2;ssov2b\x06proto3"
+	"\x05Login\x12\x14.sso.v2.LoginRequest\x1a\x15.sso.v2.LoginResponse\x12=\n" +
+	"\bRegister\x12\x17.sso.v2.RegisterRequest\x1a\x18.sso.v2.RegisterResponse\x12:\n" +
+	"\aIsAdmin\x12\x16.sso.v2.IsAdminRequest\x1a\x17.sso.v2.IsAdminResponseB/Z-github.com/rwrrioe/protos/v2/gen/go/sso;ssov2b\x06proto3"
 
 var (
 	file_sso_sso_proto_rawDescOnce sync.Once
@@ -348,20 +348,20 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 
 var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_sso_sso_proto_goTypes = []any{
-	(*LoginRequest)(nil),     // 0: sso.v1.LoginRequest
-	(*LoginResponse)(nil),    // 1: sso.v1.LoginResponse
-	(*RegisterRequest)(nil),  // 2: sso.v1.RegisterRequest
-	(*RegisterResponse)(nil), // 3: sso.v1.RegisterResponse
-	(*IsAdminRequest)(nil),   // 4: sso.v1.IsAdminRequest
-	(*IsAdminResponse)(nil),  // 5: sso.v1.IsAdminResponse
+	(*LoginRequest)(nil),     // 0: sso.v2.LoginRequest
+	(*LoginResponse)(nil),    // 1: sso.v2.LoginResponse
+	(*RegisterRequest)(nil),  // 2: sso.v2.RegisterRequest
+	(*RegisterResponse)(nil), // 3: sso.v2.RegisterResponse
+	(*IsAdminRequest)(nil),   // 4: sso.v2.IsAdminRequest
+	(*IsAdminResponse)(nil),  // 5: sso.v2.IsAdminResponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
-	0, // 0: sso.v1.Auth.Login:input_type -> sso.v1.LoginRequest
-	2, // 1: sso.v1.Auth.Register:input_type -> sso.v1.RegisterRequest
-	4, // 2: sso.v1.Auth.IsAdmin:input_type -> sso.v1.IsAdminRequest
-	1, // 3: sso.v1.Auth.Login:output_type -> sso.v1.LoginResponse
-	3, // 4: sso.v1.Auth.Register:output_type -> sso.v1.RegisterResponse
-	5, // 5: sso.v1.Auth.IsAdmin:output_type -> sso.v1.IsAdminResponse
+	0, // 0: sso.v2.Auth.Login:input_type -> sso.v2.LoginRequest
+	2, // 1: sso.v2.Auth.Register:input_type -> sso.v2.RegisterRequest
+	4, // 2: sso.v2.Auth.IsAdmin:input_type -> sso.v2.IsAdminRequest
+	1, // 3: sso.v2.Auth.Login:output_type -> sso.v2.LoginResponse
+	3, // 4: sso.v2.Auth.Register:output_type -> sso.v2.RegisterResponse
+	5, // 5: sso.v2.Auth.IsAdmin:output_type -> sso.v2.IsAdminResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

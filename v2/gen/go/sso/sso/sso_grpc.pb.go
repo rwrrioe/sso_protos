@@ -4,7 +4,7 @@
 // - protoc             v6.33.0
 // source: sso/sso.proto
 
-package v2
+package ssov2
 
 import (
 	context "context"
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Auth_Login_FullMethodName    = "/sso.v1.Auth/Login"
-	Auth_Register_FullMethodName = "/sso.v1.Auth/Register"
-	Auth_IsAdmin_FullMethodName  = "/sso.v1.Auth/IsAdmin"
+	Auth_Login_FullMethodName    = "/sso.v2.Auth/Login"
+	Auth_Register_FullMethodName = "/sso.v2.Auth/Register"
+	Auth_IsAdmin_FullMethodName  = "/sso.v2.Auth/IsAdmin"
 )
 
 // AuthClient is the client API for Auth service.
@@ -176,7 +176,7 @@ func _Auth_IsAdmin_Handler(srv interface{}, ctx context.Context, dec func(interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Auth_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "sso.v1.Auth",
+	ServiceName: "sso.v2.Auth",
 	HandlerType: (*AuthServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
