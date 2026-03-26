@@ -65,7 +65,8 @@ message LogoutResponse {}
 
 message CreateNewPasswordRequest {
   string resetToken = 1;
-  string password = 2;
+  string email = 2;
+  string password = 3;
 
 }
 

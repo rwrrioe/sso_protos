@@ -496,7 +496,8 @@ func (*LogoutResponse) Descriptor() ([]byte, []int) {
 type CreateNewPasswordRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ResetToken    string                 `protobuf:"bytes,1,opt,name=resetToken,proto3" json:"resetToken,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Password      string                 `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -534,6 +535,13 @@ func (*CreateNewPasswordRequest) Descriptor() ([]byte, []int) {
 func (x *CreateNewPasswordRequest) GetResetToken() string {
 	if x != nil {
 		return x.ResetToken
+	}
+	return ""
+}
+
+func (x *CreateNewPasswordRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
 	}
 	return ""
 }
@@ -785,12 +793,13 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\brefToken\x18\x02 \x01(\tR\brefToken\"+\n" +
 	"\rLogoutRequest\x12\x1a\n" +
 	"\brefToken\x18\x01 \x01(\tR\brefToken\"\x10\n" +
-	"\x0eLogoutResponse\"V\n" +
+	"\x0eLogoutResponse\"l\n" +
 	"\x18CreateNewPasswordRequest\x12\x1e\n" +
 	"\n" +
 	"resetToken\x18\x01 \x01(\tR\n" +
-	"resetToken\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"\x1b\n" +
+	"resetToken\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
+	"\bpassword\x18\x03 \x01(\tR\bpassword\"\x1b\n" +
 	"\x19CreateNewPasswordResponse\"'\n" +
 	"\x0fSendCodeRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\"\x12\n" +
