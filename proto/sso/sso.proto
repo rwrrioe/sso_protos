@@ -1,14 +1,24 @@
 syntax = "proto3";
 
-package sso.v2;
+package sso.v3;
 
-option go_package = "github.com/rwrrioe/protos/v2/gen/go/sso;ssov2";
+option go_package = "github.com/rwrrioe/protos/v3/gen/go/;ssov3";
 
 service Auth {
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc Register (RegisterRequest) returns (RegisterResponse);
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+  rpc RegenerateToken(RegenerateTokenRequest) returns (RegenerateTokenResponse);
+  rpc CreateNewPassword(CreateNewPasswordRequest) returns (CreateNewPasswordResponse);
+  rpc Logout (LogoutRequest) returns (LogoutResponse);
 }
+
+service Code {
+  rpc SendCode(SendCodeRequest) returns (SendCodeResponse);
+  rpc VerifyCode(VerifyCodeRequest) returns (VerifyCodeResponse);
+}
+
+// Auth messages
 
 message LoginRequest {
   string email = 1;
@@ -17,7 +27,8 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  string token = 1;
+  string accToken = 1;
+  string refToken = 2;
 }
 
 message RegisterRequest {
@@ -35,4 +46,45 @@ message IsAdminRequest {
 
 message IsAdminResponse {
   bool is_admin = 1;
+}
+
+message RegenerateTokenRequest {
+  string refToken = 1;
+}
+
+message RegenerateTokenResponse {
+  string accToken = 1;
+  string refToken = 2;
+}
+
+message LogoutRequest {
+  string refToken = 1;
+}
+
+message LogoutResponse {}
+
+message CreateNewPasswordRequest {
+  string resetToken = 1;
+  string password = 2;
+
+}
+
+message CreateNewPasswordResponse {}
+
+
+// Code messages
+
+message SendCodeRequest {
+  string email = 1;
+}
+
+message SendCodeResponse {}
+
+message VerifyCodeRequest {
+  string email = 1;
+  string code = 2;
+}
+
+message VerifyCodeResponse {
+  string resetToken = 1;
 }
